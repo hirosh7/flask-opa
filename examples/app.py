@@ -5,9 +5,8 @@ OPA is expected to be running on default port 8181
 
 import json
 import logging
-
+import examples.utils as utils
 from flask import Flask, request
-
 from flask_opa import OPA, OPAException
 
 
@@ -26,8 +25,6 @@ app.config.from_pyfile('app.cfg')
 
 app.opa = OPA(app, input_function=parse_input).secured()
 app.logger.setLevel(logging.DEBUG)
-
-import examples.utils as utils
 
 data = {
     'eliux': {

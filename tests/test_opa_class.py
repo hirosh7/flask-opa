@@ -4,8 +4,12 @@ import responses
 from flask import json
 from flask.app import Flask
 
-from flask_opa import AccessDeniedException, OPA, OPAUnexpectedException, OPAServerUnavailableException
-from tests.conftest import DATABASE_POLICIES_URL, parse_input, init_app
+from flask_opa import AccessDeniedException
+from flask_opa import OPA
+from flask_opa import OPAUnexpectedException
+from tests.conftest import DATABASE_POLICIES_URL
+from tests.conftest import init_app
+from tests.conftest import parse_input
 
 
 @responses.activate
