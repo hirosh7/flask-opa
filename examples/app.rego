@@ -17,6 +17,12 @@ allow {
 
 allow {
     input.method = "GET"
+    input.path = ["access"]
+    is_administrator
+}
+
+allow {
+    input.method = "GET"
     its_own_data
 }
 

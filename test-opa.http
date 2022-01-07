@@ -1,0 +1,25 @@
+# curl -X GET 
+#    http://localhost:5000/list 
+#    -H 'Authorization: paul' 
+#    -H 'Content-Type: application/json'
+GET http://54.187.150.6:5000/list
+Authorization: paul
+Content-Type: application/json
+
+###
+
+# curl -X GET
+#    http://localhost:5000/list
+#    -H 'Authorization: eliux'
+#    -H 'Content-Type: application/json'
+GET http://54.187.150.6:5000/list
+Authorization: eliux
+Content-Type: application/json
+
+###
+
+GET http://54.187.150.6:5000/access
+Authorization: hirosh7
+Content-Type: application/json
+
+###

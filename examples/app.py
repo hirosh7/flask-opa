@@ -6,7 +6,7 @@ OPA is expected to be running on default port 8181
 import json
 import logging
 import examples.utils as utils
-from flask import Flask, request
+from flask import Flask, request, render_template
 from flask_opa import OPA, OPAException
 
 
@@ -49,6 +49,12 @@ def available_persons():
     return json.dumps(list(data.keys()))
 
 
+@app.route("/access", methods=['GET'])
+def get_home_page():
+    utils.log_remotely("Serve up home HTML file")
+    return render_template('home.html')
+
+
 @app.route("/data/<who>", methods=['GET'])
 def show_data_of(who):
     if who in data:
@@ -84,4 +90,4 @@ def handle_opa_exception(e):
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', debug=True)
